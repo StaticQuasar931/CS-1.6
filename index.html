@@ -1,1 +1,345 @@
-Magic Mushrooms in adi?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Charset / Viewport -->
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://sites.google.com/view/staticquasar931/gm3z/cs-1-6" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Title & SEO -->
+  <title>Play CS 1.6 (Counter-Strike 1.6) – StaticQuasar931 Unblocked WebGL</title>
+  <meta name="description" content="Play CS 1.6 (Counter-Strike 1.6) in your browser — free, fullscreen, and school-safe. Quick match, classic maps, and smooth WebGL performance on Chromebook, PC, and mobile." />
+  <meta name="keywords" content="CS 1.6, Counter-Strike 1.6, cs 1.6 unblocked, play cs 1.6 online, browser cs 1.6, cs webgl, school safe shooter, cs classic maps, StaticQuasar931 cs" />
+
+  <!-- Social (metadata only) -->
+  <meta property="og:title" content="Play CS 1.6 – Unblocked WebGL by StaticQuasar931" />
+  <meta property="og:description" content="Classic Counter-Strike action in the browser. Free, fullscreen, school-safe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/cs-1-6" />
+  <meta property="og:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta property="og:image:alt" content="CS 1.6 (Counter-Strike 1.6) banner artwork — StaticQuasar931" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta name="twitter:image:alt" content="CS 1.6 (Counter-Strike 1.6) banner artwork — StaticQuasar931" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Preload banner (optional; speeds up preview crawlers) -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+
+  <!-- Styles (keep your original CSS includes exactly) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sel-lers/x@main/style.css">
+  <style>
+    canvas:focus { outline: none; }
+    html, body {
+      padding: 0; margin: 0; overflow: hidden; height: 100%;
+      -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none;
+      -moz-user-select: none; -ms-user-select: none; user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      background:#000;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    /* Hidden SEO copy for crawlers/screen readers only */
+    .seo-hidden{
+      position:absolute; width:1px; height:1px; overflow:hidden;
+      clip:rect(1px,1px,1px,1px); white-space:nowrap;
+    }
+  </style>
+</head>
+<body class="dark">
+  <!-- Hidden SEO content (no visible art on page) -->
+  <div class="seo-hidden" aria-hidden="true">
+    <h1>CS 1.6 – Counter-Strike 1.6 Unblocked WebGL</h1>
+    <p><strong>CS 1.6</strong> (Counter-Strike 1.6) runs right in your browser via WebGL. Jump into classic maps with smooth performance, fullscreen support, and school-safe embedding by StaticQuasar931.</p>
+    <ul>
+      <li>🔫 Classic bomb/defuse gameplay & iconic maps</li>
+      <li>🖥️ Browser-based, free, and fullscreen</li>
+      <li>💻 Chromebook, PC, and mobile compatible</li>
+    </ul>
+  </div>
+
+  <!-- ===== Your original structure (kept intact) ===== -->
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" tabindex="-1" style="cursor: none;" width="2560" height="1279"
+            aria-label="CS 1.6 WebGL game canvas"></canvas>
+  </div>
+
+  <div id="loading-cover" style="background: url('https://cdn.jsdelivr.net/gh/sel-lers/x@main/background.jpg') center center / cover; display: none;">
+    <div id="unity-loading-bar" role="status" aria-live="polite">
+      <div id="unity-logo"><img src="https://cdn.jsdelivr.net/gh/sel-lers/x@main/logo.png" alt="CS 1.6 loading logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full" style="width: 100%;"></div>
+      </div>
+      <div class="spinner" style="display: none;" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script>
+    // ----- (kept) variables from your snippet -----
+    const hideFullScreenButton = "";
+    const buildUrl = "https://cdn.jsdelivr.net/gh/sel-lers/x@main/Build";
+    const loaderUrl = buildUrl + "/Web GL.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/Web GL.data.unityweb",
+      frameworkUrl: buildUrl + "/Web GL.framework.js.unityweb",
+      codeUrl: buildUrl + "/Web GL.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "FoXSkr",
+      productName: "Contra",
+      productVersion: "1.9.4"
+    };
+
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+    const progressBarFull = document.querySelector("#unity-progress-bar-full");
+    const spinner = document.querySelector('.spinner');
+
+    const canFullscreen = (function () {
+      for (const key of ['exitFullscreen', 'webkitExitFullscreen', 'webkitCancelFullScreen', 'mozCancelFullScreen', 'msExitFullscreen']) {
+        if (key in document) return true;
+      }
+      return false;
+    }());
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+    }
+
+    loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/sel-lers/x@main/background.jpg') center / cover";
+    loadingCover.style.display = "";
+
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    function FocusGame() { window.focus(); canvas.focus(); }
+    window.addEventListener('pointerdown', FocusGame);
+    window.addEventListener('touchstart', FocusGame);
+
+    let StartUnityInstance;
+    let myGameInstance;
+    let ysdk = null;
+
+    // No-op SDK stubs (kept from your code)
+    function GetPayments(){ return Promise.resolve("none"); }
+    function SaveCloud(){}
+    function LoadCloud(){ return Promise.resolve("noData"); }
+    function InitPlayer(){ return Promise.resolve("noData"); }
+    function FullAdShow(){}
+    function RewardedShow(){}
+    function StickyAdActivity(){}
+    function Review(){}
+    function PromptShow(){}
+    function InitLeaderboards(){}
+    function GetLeaderboardScores(){}
+    function SetLeaderboardScores(){}
+    function ConsumePurchase(){}
+    function InitLeaderboard(){}
+    function ConsumePurchases(){}
+
+    try {
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        StartUnityInstance = function () {
+          createUnityInstance(canvas, config, (progress) => {
+            spinner.style.display = "none";
+            progressBarEmpty.style.display = "";
+            progressBarFull.style.width = `${100 * progress}%`;
+          }).then((unityInstance) => {
+            myGameInstance = unityInstance;
+            window.unityInstance = unityInstance; // expose for helpers
+            loadingCover.style.display = "none";
+          }).catch((message) => {
+            console.error("Unity load error:", message);
+          });
+        };
+        StartUnityInstance();
+      };
+      document.body.appendChild(script);
+    } catch (error) {
+      console.error("Init error:", error);
+    }
+
+    function InitGame() {
+      try {
+        console.log('Init Game Success');
+        if (myGameInstance != null) {
+          // hook point if needed later
+        }
+      } catch (err) { console.error("InitGame error:", err); }
+    }
+
+    window.addEventListener("unhandledrejection", function(event) {
+      console.warn("Suppressed error:", event.reason);
+      event.preventDefault();
+    });
+  </script>
+
+  <!-- Keep external loader include (from your snippet) -->
+  <script src="https://cdn.jsdelivr.net/gh/sel-lers/x@main/Build/Web GL.loader.js"></script>
+</body>
+</html>
+
+CS 1.6
+
+CS 1.6
+
+<!-- ==========================================
+     CS 1.6 — GitHub Version (with SEO + Auto-Save helper)
+     URL: https://staticquasar931.github.io/CS-1.6/
+     ========================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Charset / Viewport -->
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://staticquasar931.github.io/CS-1.6/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Title & SEO -->
+  <title>Play CS 1.6 (Counter-Strike 1.6) – StaticQuasar931 Unblocked WebGL</title>
+  <meta name="description" content="Play CS 1.6 (Counter-Strike 1.6) in your browser with autosave — free, fullscreen, and school-safe. Classic maps, smooth WebGL, works on Chromebook, PC, and mobile." />
+  <meta name="keywords" content="CS 1.6, Counter-Strike 1.6, cs 1.6 unblocked, browser cs, cs webgl autosave, school safe shooter, cs classic maps, StaticQuasar931 cs" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Play CS 1.6 – Unblocked WebGL by StaticQuasar931" />
+  <meta property="og:description" content="Classic Counter-Strike in the browser with autosave. Free, fullscreen, school-safe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://staticquasar931.github.io/CS-1.6/" />
+  <meta property="og:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta property="og:image:alt" content="CS 1.6 (Counter-Strike 1.6) banner artwork — StaticQuasar931" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta name="twitter:image:alt" content="CS 1.6 (Counter-Strike 1.6) banner artwork — StaticQuasar931" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Optional image preload -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sel-lers/x@main/style.css">
+  <style>
+    html, body {
+      width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background:#000;
+      -webkit-touch-callout:none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .fullscreen { position:absolute; inset:0; }
+    #unity-canvas { cursor: none; }
+    #loading-cover {
+      display:flex; align-items:center; justify-content:center; flex-direction:column;
+      background: url('https://cdn.jsdelivr.net/gh/sel-lers/x@main/background.jpg') center / cover;
+    }
+    #unity-logo img { max-width: 180px; height: auto; }
+    /* Hidden SEO block */
+    .seo-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap;}
+  </style>
+</head>
+<body>
+  <!-- Hidden SEO text -->
+  <div class="seo-hidden" aria-hidden="true">
+    <h1>CS 1.6 – Counter-Strike 1.6 Unblocked (WebGL with Autosave)</h1>
+    <p><strong>CS 1.6</strong> runs in your browser via WebGL with autosave helpers enabled. Enjoy classic FPS maps, free fullscreen play, and school-safe embedding by StaticQuasar931.</p>
+  </div>
+
+  <!-- Game container -->
+  <div id="unity-container" class="unity-desktop fullscreen" role="application" aria-label="CS 1.6 WebGL">
+    <canvas id="unity-canvas" tabindex="-1" width="2560" height="1279"></canvas>
+  </div>
+
+  <div id="loading-cover" class="fullscreen" role="status" aria-live="polite">
+    <div id="unity-loading-bar">
+      <div id="unity-logo">
+        <img src="https://cdn.jsdelivr.net/gh/sel-lers/x@main/logo.png" alt="CS 1.6 loading logo">
+      </div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full" style="width: 0%;"></div>
+      </div>
+      <div class="spinner" style="display: none;" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <script>
+    const buildUrl = "https://cdn.jsdelivr.net/gh/sel-lers/x@main/Build";
+    const loaderUrl = buildUrl + "/Web GL.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/Web GL.data.unityweb",
+      frameworkUrl: buildUrl + "/Web GL.framework.js.unityweb",
+      codeUrl: buildUrl + "/Web GL.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "FoXSkr",
+      productName: "Contra",
+      productVersion: "1.9.4"
+    };
+
+    const canvas = document.getElementById("unity-canvas");
+    const loadingCover = document.getElementById("loading-cover");
+    const barEmpty = document.getElementById("unity-progress-bar-empty");
+    const barFull = document.getElementById("unity-progress-bar-full");
+    const spinner = document.querySelector(".spinner");
+
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    function focusGame(){ window.focus(); canvas.focus(); }
+    addEventListener("pointerdown", focusGame); addEventListener("touchstart", focusGame);
+
+    // Try to keep the file system flushed to storage (autosave helper)
+    function trySyncFS(){
+      try{
+        const m = window.unityInstance && window.unityInstance.Module;
+        if(m && m.FS && typeof m.FS.syncfs === "function"){
+          // false = populate from persistent; true = flush to persistent
+          m.FS.syncfs(true, ()=>{/* flushed */});
+        }
+      }catch(e){/* ignore */}
+    }
+
+    // Backup heartbeat (optional): write a small marker so users see "progress saved recently"
+    function markSaved(){
+      try{
+        localStorage.setItem("cs16_autosave_timestamp", String(Date.now()));
+      }catch(e){}
+    }
+
+    (function boot(){
+      const s = document.createElement("script");
+      s.src = loaderUrl;
+      s.onload = () => {
+        createUnityInstance(canvas, config, (p)=>{
+          spinner.style.display = "none";
+          barEmpty.style.display = "";
+          barFull.style.width = (p*100)+"%";
+        }).then((inst)=>{
+          window.unityInstance = inst;
+          // First sync soon after boot (in case game writes early)
+          setTimeout(()=>{ trySyncFS(); markSaved(); }, 5000);
+
+          // Regular periodic flushes
+          setInterval(()=>{ trySyncFS(); markSaved(); }, 30000);
+
+          // Flush on visibility changes / unload
+          addEventListener("visibilitychange", ()=>{ if(document.hidden) { trySyncFS(); markSaved(); } });
+          addEventListener("pagehide", ()=>{ trySyncFS(); markSaved(); });
+          addEventListener("beforeunload", ()=>{ trySyncFS(); markSaved(); });
+
+          loadingCover.remove();
+          canvas.focus();
+        }).catch((err)=>{
+          console.error("Unity load error:", err);
+        });
+      };
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
