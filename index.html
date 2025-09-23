@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- Charset & Viewport -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
 
-  <!-- ===== SEO / Social ===== -->
-  <title>CS 1.6 Unblocked — Play Counter-Strike 1.6 at School | StaticQuasar931</title>
-  <link rel="canonical" href="https://staticquasar931.github.io/CS-1.6/">
-  <meta name="description" content="Play CS 1.6 (Counter-Strike 1.6) unblocked in your browser. Fast loading, school-safe, progress saving, and works at school, work, or anywhere — by StaticQuasar931.">
-  <meta name="keywords" content="CS 1.6, Counter-Strike 1.6, cs 1.6 unblocked, counter strike unblocked, play at school, school-safe fps, browser fps, webgl shooter, free fps game, unblocked games, unbl0cked, g@mes, static, static 931, staticquasar, staticquasar931, staticq, staticq931">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://staticquasar931.github.io/CS-1.6/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CS 1.6 Unblocked — Play in Browser (Saves Progress)">
-  <meta property="og:description" content="Play Counter-Strike 1.6 unblocked with save support. Works at school, work, or anywhere.">
-  <meta property="og:url" content="https://staticquasar931.github.io/CS-1.6/">
-  <meta property="og:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg">
-  <meta property="og:image:alt" content="CS 1.6 Unblocked — StaticQuasar931">
-  <meta property="og:site_name" content="StaticQuasar931">
+  <!-- Title -->
+  <title>CS 1.6 Unblocked — Play Counter-Strike 1.6 in Browser (Saves Progress) | StaticQuasar931</title>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CS 1.6 Unblocked — Play in Browser (Saves Progress)">
-  <meta name="twitter:description" content="School-safe, unblocked CS 1.6 with progress saving.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg">
+  <!-- SEO Meta -->
+  <meta name="description" content="Play CS 1.6 (Counter-Strike 1.6) unblocked in your browser with progress saving. School-safe, fullscreen, and fast — by StaticQuasar931." />
+  <meta name="keywords" content="CS 1.6, Counter-Strike 1.6, cs 1.6 unblocked, counter strike unblocked, play cs 1.6 at school, school-safe fps, browser fps, webgl shooter, free fps game, unblocked games, unbl0cked, g@mes, static, static 931, staticquasar, staticquasar931, staticq, staticq931, 931" />
 
-  <!-- PWA-ish hints (optional) -->
-  <meta name="theme-color" content="#101215">
+  <!-- Social Metadata -->
+  <meta property="og:title" content="CS 1.6 — Play Unblocked in Your Browser (Saves Progress)" />
+  <meta property="og:description" content="Classic Counter-Strike 1.6, school-safe and unblocked, with progress saving on GitHub Pages." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://staticquasar931.github.io/CS-1.6/" />
+  <meta property="og:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta property="og:image:alt" content="Counter-Strike 1.6 (CS 1.6) — StaticQuasar931" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+  <meta name="twitter:image:alt" content="Counter-Strike 1.6 (CS 1.6) — StaticQuasar931" />
+  <meta name="theme-color" content="#000000" />
 
-  <!-- Existing stylesheet (unchanged) -->
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1758584983/CS_1.6_StaticQuasar931_eaudiw.jpg" />
+
+  <!-- Base stylesheet from the original build (unchanged) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sel-lers/x@main/style.css">
 
+  <!-- Page styles (non-intrusive) -->
   <style>
-    /* Keep base visual/behavior exactly as provided */
     html, body {
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
+      margin: 0; padding: 0; height: 100%;
+      background: #000; overflow: hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -46,24 +48,50 @@
       -ms-user-select: none;
       user-select: none;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
-      height: 100%;
-      background:#000;
     }
     canvas:focus { outline: none; }
 
-    /* Hidden SEO block (200+ words) */
-    .seo-hidden {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      clip: rect(0 0 0 0) !important;
-      clip-path: inset(50%) !important;
-      white-space: nowrap !important;
+    /* ===== Static Menu (STANDARD) ===== */
+    #staticMenu {
+      position: fixed; top: 10px; left: 10px; z-index: 9999;
+      background: #111; color: #0ff; padding: 10px 16px;
+      border-radius: 10px; font-size: 14px;
+      animation: glow 2s infinite alternate;
+      border: 1px solid rgba(0,255,255,0.25);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
     }
+    #staticMenu a { color: #0ff; text-decoration: none; font-weight: bold; }
+    #closeStaticMenu { margin-left: 12px; color: #f55; cursor: pointer; }
+    @keyframes glow { 0% {opacity:.82} 100% {opacity:1; box-shadow:0 0 12px #0ff;} }
+
+    /* ===== Bottom-right rotating slide-in (STANDARD) ===== */
+    #staticSlideMenu {
+      position: fixed; bottom: 30px; right: -150px; z-index: 9999;
+      width: 100px; height: 100px; transition: right 1.2s ease-in-out;
+      display: block; background: transparent; /* transparent container */
+      pointer-events: auto;
+    }
+    #staticSlideMenu.show { right: 30px; }
+    #staticSlideMenu img {
+      width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover; animation: pulse 2.8s ease-in-out infinite;
+      background: transparent !important;   /* transparent image background */
+      border: none !important;              /* no border halo */
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35); /* subtle drop shadow only */
+    }
+    @keyframes pulse { 0%,100% {transform:scale(1)} 50% {transform:scale(1.08)} }
+
+    /* Hidden SEO */
+    .seo-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;
+    }
+
+    /* Unity canvas fit (style only; does not alter build) */
+    #unity-canvas { width: 100vw; height: 100vh; display:block; }
   </style>
 
-  <!-- JSON-LD schema for discoverability -->
+  <!-- JSON-LD schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +102,7 @@
     "author": { "@type": "Organization", "name": "FoXSkr" },
     "publisher": { "@type": "Organization", "name": "StaticQuasar931" },
     "applicationCategory": "Game",
-    "genre": ["Shooter", "FPS", "Action"],
+    "genre": ["Shooter","FPS","Action"],
     "operatingSystem": "Web",
     "inLanguage": "en",
     "description": "Play CS 1.6 (Counter-Strike 1.6) unblocked in your browser with progress saving. Works at school, work, or anywhere.",
@@ -84,7 +112,20 @@
 </head>
 
 <body class="dark">
-  <!-- ====== ORIGINAL BASE CODE START (Unchanged functional logic/content) ====== -->
+  <!-- ===== Static Menu (STANDARD) ===== -->
+  <div id="staticMenu">
+    <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">More Unblocked Games by Static</a>
+    <span id="closeStaticMenu" title="Hide for 3 minutes">✕</span>
+  </div>
+
+  <!-- ===== Rotating slide-in (STANDARD) — transparent background assets ===== -->
+  <a id="staticSlideMenu" href="https://sites.google.com/view/staticquasar931/google-form" target="_blank" rel="noopener">
+    <img id="staticSlideImg"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png"
+         alt="Google Form" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+  </a>
+
+  <!-- ====== ORIGINAL BASE CODE START (UNMODIFIED FUNCTIONALITY) ====== -->
   <module>
   <moduleprefs title="Google.com">
   <content type="html"><!--[CDATA[
@@ -97,15 +138,9 @@
   <!-- Yandex Games SDK -->
   <style>
           /* Убираем выделение по нажатию клавиш */
-          canvas:focus {
-              outline: none;
-          }
-
+          canvas:focus { outline: none; }
           html, body {
-              /* Убираем отступы */
-              padding: 0;
-              margin: 0;
-              /* Отключаем скролл и лонгтап на IOS */
+              padding: 0; margin: 0;
               overflow: hidden;
               -webkit-touch-callout: none;
               -webkit-user-select: none;
@@ -114,7 +149,6 @@
               -ms-user-select: none;
               user-select: none;
               -webkit-tap-highlight-color: rgba(0,0,0,0);
-              /* Ставим высоту на 100% */
               height: 100%;
           }
       </style>
@@ -173,31 +207,26 @@
               container.className = "unity-mobile";
           }
 
-          // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
+          // Loading background
           loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/sel-lers/x@main/background.jpg') center / cover";
           loadingCover.style.display = "";
 
-          // Выключаем появление меню при правом клике мыши
+          // Disable context menu
           document.addEventListener('contextmenu', event => event.preventDefault());
 
-          // Возвращаем фокус, если кликнули по экрану
+          // Focus game
           function FocusGame() {
               window.focus();
               canvas.focus();
           }
-
-          window.addEventListener('pointerdown', () => {
-              FocusGame();
-          });
-          window.addEventListener('touchstart', () => {
-              FocusGame();
-          });
+          window.addEventListener('pointerdown', FocusGame);
+          window.addEventListener('touchstart',  FocusGame);
 
           let StartUnityInstance;
           let myGameInstance;
           let ysdk = null; // Yandex SDK pasif
 
-          // Varsayılan değerlerle environmentData, cloudSaves, paymentsData ve playerData gibi değişkenlerin tanımlanması
+          // Default env stubs
           let environmentData = {
               language: "en",
               domain: "default_domain",
@@ -227,13 +256,13 @@
           
           let cloudSaves = 'noData';
           let paymentsData = 'none';
-          let playerData = 'noData'; // Varsayılan playerData tanımı
+          let playerData = 'noData';
           let player = null;
           let payments = null;
           let initGame = false;
           let nowFullAdOpen = false;
 
-          // Eksik olabilecek tüm SDK işlevlerini varsayılan olarak tanımla
+          // SDK function stubs
           function GetPayments() { console.warn("GetPayments is not implemented"); return Promise.resolve("none"); }
           function SaveCloud() { console.warn("SaveCloud is not implemented"); }
           function LoadCloud() { console.warn("LoadCloud is not implemented"); return Promise.resolve("noData"); }
@@ -248,30 +277,38 @@
           function SetLeaderboardScores() { console.warn("SetLeaderboardScores is not implemented"); }
           function ConsumePurchase() { console.warn("ConsumePurchase is not implemented"); }
           function InitLeaderboard() { console.warn("ConsumePurchase is not implemented"); }
-          function ConsumePurchases() { console.warn("ConsumePurchases is not implemented"); } // Varsayılan tanım eklendi
+          function ConsumePurchases() { console.warn("ConsumePurchases is not implemented"); }
 
-          // Hata yakalama ile Unity başlatma işlemi
+          // Start Unity AFTER loader loads
           try {
               const script = document.createElement("script");
               script.src = loaderUrl;
+              script.async = true;
               script.onload = () => {
                   StartUnityInstance = function () {
                       createUnityInstance(canvas, config, (progress) => {
                           spinner.style.display = "none";
                           progressBarEmpty.style.display = "";
-                          progressBarFull.style.width = `${100 * progress}%`;
+                          progressBarFull.style.width = (100 * progress) + '%';
                       }).then((unityInstance) => {
                           myGameInstance = unityInstance;
+                          window.myGameInstance = unityInstance; // expose for saving hook
                           loadingCover.style.display = "none";
                       }).catch((message) => {
-                          console.error("Unity yükleme hatası:", message);
+                          console.error("Unity load error:", message);
                       });
                   };
-                  StartUnityInstance();
+                  // Ensure DOM is ready before starting
+                  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                      StartUnityInstance();
+                  } else {
+                      window.addEventListener('DOMContentLoaded', StartUnityInstance, { once: true });
+                  }
               };
+              script.onerror = (e) => console.error("Loader failed to load:", e);
               document.body.appendChild(script);
           } catch (error) {
-              console.error("Başlatma sırasında hata:", error);
+              console.error("Init error:", error);
           }
 
           function InitGame() {
@@ -282,13 +319,13 @@
                       myGameInstance.SendMessage('YandexGame', 'OpenFullAd');
                   }
               } catch (error) {
-                  console.error("InitGame sırasında hata:", error);
+                  console.error("InitGame error:", error);
               }
           }
 
-          // Hata oluştuğunda oyuna devam etmek için tüm hataları global olarak yakalayan yapı
+          // Swallow unhandled promise rejections to keep game running
           window.addEventListener("unhandledrejection", function(event) {
-              console.warn("Hata es geçildi:", event.reason);
+              console.warn("Promise rejected (ignored):", event.reason);
               event.preventDefault();
           });
   </script>
@@ -296,87 +333,155 @@
 
   ]]&gt;</content>
   </moduleprefs></module>
-  <script src="https://cdn.jsdelivr.net/gh/sel-lers/x@main/Build/Web GL.loader.js"></script>
-  <script src="blob:https://1735954736-atari-embeds.googleusercontent.com/3954908a-7343-4bb1-9c8d-822a3e4d5fb8"></script>
+  <script src="https://cdn.jsdelivr.net/gh/sel-lers/x@main/Build/Web GL.loader.js" defer></script>
   <!-- ====== ORIGINAL BASE CODE END ====== -->
 
-  <!-- ====== PROGRESS-SAVING ADD-ONS (Non-breaking, safe wrappers) ======
-       These additions DO NOT modify the game build; they safely sync the
-       Unity WebGL virtual filesystem (IDBFS) when available and add a
-       localStorage fallback. Guarded with feature checks so nothing breaks. -->
+  <!-- ===== Progress saving + canvas fit (safe wrappers, non-breaking) ===== -->
   <script>
     (function () {
-      // Namespaced localStorage helpers (fallback if FS.syncfs is unavailable)
       const NS = 'cs16_static931';
-      function lsSet(key, value) {
-        try { localStorage.setItem(`${NS}:${key}`, JSON.stringify(value)); } catch(e) {}
-      }
-      function lsGet(key, def=null) {
-        try {
-          const v = localStorage.getItem(`${NS}:${key}`);
-          return v ? JSON.parse(v) : def;
-        } catch(e) { return def; }
-      }
+      function lsSet(key, value) { try { localStorage.setItem(`${NS}:${key}`, JSON.stringify(value)); } catch(e) {} }
+      function lsGet(key, def=null) { try { const v = localStorage.getItem(`${NS}:${key}`); return v ? JSON.parse(v) : def; } catch(e) { return def; } }
 
-      // Attempt to flush Unity IDBFS (if accessible through the instance)
       function flushUnityFS(reason) {
         try {
           const mod = (window.myGameInstance && (window.myGameInstance.Module || window.myGameInstance.module || window.myGameInstance)) || null;
           const FS = mod && (mod.FS || (mod['FS'] && mod['FS'])) || null;
           if (FS && typeof FS.syncfs === 'function') {
-            // false = write changes from memory to IndexedDB
             FS.syncfs(false, function (err) {
               if (err) console.warn('[Save] IDBFS sync error:', err);
               else console.log('[Save] Flushed Unity FS (' + reason + ')');
             });
           } else {
-            // Fallback ping to keep a minimal heartbeat (timestamp)
+            // Fallback heartbeat (keeps a minimal record for continuity)
             lsSet('heartbeat', { t: Date.now(), r: reason });
           }
-        } catch (e) {
-          console.warn('[Save] flushUnityFS guard error:', e);
-        }
+        } catch (e) { console.warn('[Save] flushUnityFS guard error:', e); }
       }
 
-      // Periodic autosave (every 30s) + visibility / unload hooks
-      let autosaveTimer = setInterval(() => flushUnityFS('autosave'), 30000);
+      // Periodic + lifecycle saves
+      setInterval(() => flushUnityFS('autosave'), 30000);
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'hidden') flushUnityFS('hidden');
       });
 
-      // User-requested confirmation + final save attempt
+      // Leave warning (per your standard)
       window.onbeforeunload = function (e) {
         flushUnityFS('beforeunload');
         const msg = 'Your game progress is being saved. Are you sure you want to leave or reload?';
-        (e || window.event).returnValue = msg;
-        return msg;
+        (e || window.event).returnValue = msg; return msg;
       };
 
-      // Expose a tiny API for future integration (non-breaking)
-      window.StaticSave = {
-        flush: () => flushUnityFS('manual'),
-        set: lsSet,
-        get: lsGet
-      };
-
-      // Resize the canvas to fit the window while preserving your base code
+      // Fullscreen fit for Unity canvas without changing base config
       function fitCanvas() {
-        try {
-          const c = document.getElementById('unity-canvas');
-          if (!c) return;
-          c.style.width = '100vw';
-          c.style.height = '100vh';
-        } catch(e) {}
+        const c = document.getElementById('unity-canvas');
+        if (!c) return;
+        c.style.width = '100vw';
+        c.style.height = '100vh';
       }
       fitCanvas();
       addEventListener('resize', fitCanvas);
+
+      // Expose small API if ever needed
+      window.StaticSave = { flush: () => flushUnityFS('manual'), set: lsSet, get: lsGet };
     })();
   </script>
 
-  <!-- ===== Hidden SEO content (not visible) ===== -->
+  <!-- ===== Static Menu behavior (STANDARD) & 3-way slide-in rotation (Form, Discord, Instagram) ===== -->
+  <script>
+    // Exact images from your other code (Form + Instagram). For Discord, replace with your Cloudinary icon if you have one.
+    const FORM_IMG    = "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png";
+    const INSTA_IMG   = "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533158/raw_cw34yi.png";
+    const DISCORD_IMG = "https://discord.com/assets/2c21aeda16de354ba5334551a883b481.png"; // Replace with your Cloudinary URL when available
+
+    const FORM_LINK    = "https://sites.google.com/view/staticquasar931/google-form";
+    const DISCORD_LINK = "https://discord.com/"; // Replace with your server/invite
+    const INSTA_LINK   = "https://www.instagram.com/freeschoolgamepage/";
+
+    // Static Menu close -> hide for 3 minutes then return
+    (function initStaticMenuClose() {
+      const menu = document.getElementById("staticMenu");
+      const btn  = document.getElementById("closeStaticMenu");
+      const KEY  = "sq_menu_hide_until";
+      function hiddenActive() {
+        try { return Date.now() < (parseInt(localStorage.getItem(KEY) || "0", 10)); } catch(e){ return false; }
+      }
+      function refresh() {
+        if (!menu) return;
+        menu.style.display = hiddenActive() ? "none" : "block";
+      }
+      if (btn) {
+        btn.onclick = () => {
+          try { localStorage.setItem(KEY, String(Date.now() + 180000)); } catch(e){}
+          refresh();
+          setTimeout(refresh, 181000);
+        };
+      }
+      refresh();
+    })();
+
+    // Bottom-right rotating slide-in (Form → Discord → Instagram) with transparent background
+    (function slideRotator(){
+      const anchor = document.getElementById("staticSlideMenu");
+      const img = document.getElementById("staticSlideImg");
+      if (!anchor || !img) return;
+
+      const items = [
+        { src: FORM_IMG,    alt: "Google Form", link: FORM_LINK },
+        { src: DISCORD_IMG, alt: "Discord",     link: DISCORD_LINK },
+        { src: INSTA_IMG,   alt: "Instagram",   link: INSTA_LINK }
+      ];
+
+      // Ensure img keeps transparency (in case CSS is overridden by external styles)
+      img.style.background = "transparent";
+      img.style.border = "none";
+
+      let i = -1;
+      function showNext() {
+        i = (i + 1) % items.length;
+        const pick = items[i];
+
+        const pre = new Image();
+        pre.onload  = () => { img.src = pick.src; img.alt = pick.alt; anchor.href = pick.link; anchor.classList.add("show"); };
+        pre.onerror = () => { img.src = pick.src; img.alt = pick.alt; anchor.href = pick.link; anchor.classList.add("show"); };
+        pre.referrerPolicy = "no-referrer";
+        pre.src = pick.src;
+
+        if (showNext._hide) clearTimeout(showNext._hide);
+        showNext._hide = setTimeout(() => anchor.classList.remove("show"), 10000);
+      }
+
+      showNext();                   // initial
+      setInterval(showNext, 25000); // every 25s
+    })();
+
+    // Optional keyboard toggle (Y+U+I) to hide/show both menus
+    document.addEventListener("keydown", (e) => {
+      if (!["y","u","i"].includes(e.key.toLowerCase())) return;
+      window._toggleKeys = window._toggleKeys || {};
+      window._toggleKeys[e.key.toLowerCase()] = true;
+      if (window._toggleKeys["y"] && window._toggleKeys["u"] && window._toggleKeys["i"]) {
+        const menu  = document.getElementById("staticMenu");
+        const slide = document.getElementById("staticSlideMenu");
+        [menu, slide].forEach(el => {
+          if (!el) return;
+          const hidden = (el.style.opacity === "0" || el.style.display === "none");
+          el.style.transition = "opacity 0.6s";
+          el.style.display = "block";
+          requestAnimationFrame(() => { el.style.opacity = hidden ? "1" : "0"; });
+          setTimeout(() => { if (!hidden) el.style.display = "none"; }, 650);
+        });
+        window._toggleKeys = {};
+      }
+    });
+  </script>
+
+  <!-- Hidden SEO content -->
   <div class="seo-hidden" aria-hidden="true">
-    CS 1.6 (Counter-Strike 1.6) unblocked — play the classic FPS right in your browser with seamless progress saving on the GitHub version by StaticQuasar931. This school-safe build is designed to work at school, work, or anywhere, with no extra installs and fast WebGL loading. If you are looking for “CS 1.6 unblocked”, “Counter-Strike 1.6 school safe”, or “free browser FPS game”, this page is built to help you find and play instantly. We aim for smooth performance, quick resume, and reliable saving using IndexedDB/IDBFS where supported, plus a localStorage fallback. Your session auto-flushes on intervals, tab hide, and before leaving the page to reduce the risk of lost data.
-    For more unblocked games and alternate versions, visit the StaticQuasar931 main listing at https://sites.google.com/view/staticquasar931/gm3z and learn about new releases on https://sites.google.com/view/staticquasar931. Popular searches include “CS 1.6 unblocked at school”, “Counter Strike 1.6 browser”, “unblocked FPS game”, and “classic Counter-Strike web version”. Brand keywords for indexing: static, static 931, staticquasar, staticquasar931, staticq, staticq931, 931. This page is school-friendly, focused on fast access, and kept simple to avoid being blocked. Enjoy classic bomb defuse and team strategy gameplay with minimal setup and dependable save behavior in supported browsers. If you need a different build or backup link, check our game list for alternatives and mirrors.
+    <h1>CS 1.6 — Counter-Strike 1.6 Unblocked (Browser Version)</h1>
+    <p><strong>CS 1.6 (Counter-Strike 1.6)</strong> is a classic FPS you can now play unblocked in your browser with progress saving supported on GitHub Pages. This school-safe version is designed to work at school, work, or anywhere with fast WebGL loading and fullscreen play. If you’re searching for “cs 1.6 unblocked”, “counter strike unblocked at school”, or “browser fps game”, this page is tuned to help you launch instantly.</p>
+    <p>Saving is handled via IndexedDB/IDBFS where supported, with autosave on intervals, when the tab hides, and before you leave the page. A localStorage heartbeat is used as a fallback to improve continuity across sessions. For more unblocked games and alternate versions, visit our main list at https://sites.google.com/view/staticquasar931/gm3z and the homepage at https://sites.google.com/view/staticquasar931.</p>
+    <p>Indexing keywords: static, static 931, staticquasar, staticquasar931, staticq, staticq931, 931, unblocked games, unbl0cked g@mes, cs1.6 browser, counter strike 1.6 web. Enjoy classic bomb defuse and team strategy gameplay with minimal setup and dependable save behavior in modern browsers.</p>
   </div>
 </body>
 </html>
